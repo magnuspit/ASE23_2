@@ -1,7 +1,7 @@
 import numpy as np
 
 def my_function():
-	arr = np.array([1, 2, 4])
+	arr = np.array([1, 2, 3])
 	return np.sum(arr)
 
 if __name__ == "__main__":
