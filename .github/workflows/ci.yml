@@ -9,33 +9,26 @@ on:
     branches:
       - master
 
-# Jobs to be executed as part of this workflow
 jobs:
-  # Name of the job, in this case, it's called 'test'
-  test:
-
-    # Specifies the type of runner (the environment) that the job will run on
-    # In this case, it will run on the latest version of Ubuntu.
+  build:
     runs-on: ubuntu-latest
-
-    # List of steps that the job will run
     steps:
-    # Checkout the code from the repository to the runner
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Set up Python environment on the runner
-    # The version of Python used is 3.x (latest in 3.x series)
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
 
-    # Install Python dependencies specified in the 'requirements.txt' file
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-    # Run the build and tests (the build.py file should handle this)
-    - name: Build and Run tests
+    - name: Run build script
       run: python build.py
+
+    - name: Run test for build output
+      run: python src/test.py
 
