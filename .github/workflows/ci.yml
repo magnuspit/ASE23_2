@@ -32,3 +32,11 @@ jobs:
     - name: Run test for build output
       run: python src/test.py
 
+    # New Step to build a Docker image
+    - name: Build Docker image
+      run:docker build -t my-image
+
+
+
+
+
