@@ -38,5 +38,4 @@ jobs:
     # Run the build and tests (the build.py file should handle this)
     - name: Build and Run tests
       run: python build.py
-      working-directory: /home/runner/work/ASE23_2
 
