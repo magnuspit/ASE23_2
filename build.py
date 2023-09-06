@@ -1,8 +1,4 @@
 import subprocess
-import os
-
-print("Listing files in src:")
-print(os.listdir("/home/runner/work/ASE23_2/ASE23_2/src"))
 
 def build_project():
     subprocess.run(["python", "src/mycode.py"])
