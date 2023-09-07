@@ -38,7 +38,8 @@ jobs:
     - name: Run Docker Image and Test Docker Container
       run: |
         output=$(docker run --rm my-image)
-        if [[ "$output" != "Expected Output" ]]; then
+	echo $output
+        if [[ "$output" != "6" ]]; then
           exit 1
         fi
 
